@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Lazada/Daraz Reviews Scraper",
+  "version": "1.0.0",
+  "description": "Scrape reviews (ratings, text, images), paginate with delays, and export CSV.",
+  "action": { "default_popup": "popup.html" },
+  "permissions": ["activeTab", "scripting", "downloads", "storage"],
+  "host_permissions": [
+    "https://*.lazada.sg/*",
+    "https://*.lazada.co.id/*",
+    "https://*.lazada.com.my/*",
+    "https://*.lazada.co.th/*",
+    "https://*.lazada.vn/*",
+    "https://*.daraz.pk/*",
+    "https://*.daraz.lk/*",
+    "https://*.daraz.com.np/*",
+    "https://*.daraz.com.bd/*"
+  ],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.lazada.sg/*",
+        "https://*.lazada.co.id/*",
+        "https://*.lazada.com.my/*",
+        "https://*.lazada.co.th/*",
+        "https://*.lazada.vn/*",
+        "https://*.daraz.pk/*",
+        "https://*.daraz.lk/*",
+        "https://*.daraz.com.np/*",
+        "https://*.daraz.com.bd/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

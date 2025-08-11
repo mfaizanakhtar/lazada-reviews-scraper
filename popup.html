@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Reviews Scraper</title>
+    <style>
+      body { font: 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 12px; width: 320px; }
+      .row { display:flex; gap:8px; align-items:center; margin: 8px 0; }
+      label { width: 130px; }
+      input[type="number"] { width: 80px; }
+      .actions { display:flex; gap:8px; }
+      button { padding: 8px 10px; border: 0; border-radius: 8px; cursor: pointer; }
+      button.primary { background: #111827; color:#fff; }
+      .muted { color:#6b7280; font-size:12px; }
+    </style>
+  </head>
+  <body>
+    <h3>Reviews Scraper</h3>
+
+    <div class="row">
+      <label for="maxPages">Max pages</label>
+      <input id="maxPages" type="number" min="1" placeholder="(all)" />
+    </div>
+    <div class="row">
+      <label for="delayMin">Delay min (ms)</label>
+      <input id="delayMin" type="number" min="0" value="1000" />
+    </div>
+    <div class="row">
+      <label for="delayMax">Delay max (ms)</label>
+      <input id="delayMax" type="number" min="0" value="3000" />
+    </div>
+    <div class="row">
+      <label for="withImages">Include images</label>
+      <input id="withImages" type="checkbox" checked />
+    </div>
+
+    <div class="actions">
+      <button id="start" class="primary">Start</button>
+      <button id="stop">Stop</button>
+    </div>
+
+    <p class="muted">Open a product page’s reviews tab first.</p>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
